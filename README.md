@@ -56,5 +56,3 @@ Existing OASIS Kaggle notebooks are used only as technical references for prepro
 - [Final DL Project – Alzheimer's Detection](https://www.kaggle.com/code/romyleferink/final-dl-project-alzheimer-s-detection)
 
 The longitudinal visit-pairing strategy, future-status prediction task, multimodal comparison, and patient-level evaluation are this project's own contributions.
-
-*This project is for research and educational purposes and is not intended for clinical diagnosis.*
