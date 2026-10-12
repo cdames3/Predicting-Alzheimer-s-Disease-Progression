@@ -218,3 +218,12 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+#prevents large OASIS files and secrets from being committed
+data/
+*.nii
+*.nii.gz
+*.img
+*.hdr
+wandb/
+.env
