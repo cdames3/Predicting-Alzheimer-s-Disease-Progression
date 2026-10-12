@@ -16,7 +16,7 @@ We compare three models:
 2. **Metadata-only** – uses variables such as age, sex, education, socioeconomic status, and earlier cognitive measurements.
 3. **Multimodal** – combines CNN-derived MRI features with patient metadata.
 
-Comparing these models measures how much predictive value comes from imaging, from patient metadata, and from their combination.
+Comparing these models measures how much predictive value comes from imaging, patient metadata, and their combination.
 
 **Patient-level splitting** ensures visits from the same individual never appear in both training and test sets.
 
