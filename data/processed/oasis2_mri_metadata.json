@@ -1,0 +1,75 @@
+{
+  "created_utc": "2026-10-22T01:09:20+00:00",
+  "archives": [
+    {
+      "file": "OAS2_RAW_PART1.tar.gz",
+      "sha256": "6df8fa570698c1f65769709275ca946f076838fb6b3c305c042ae6957897ac64",
+      "size_bytes": 10874461059,
+      "scans": 771,
+      "sessions": 209
+    },
+    {
+      "file": "OAS2_RAW_PART2.tar.gz",
+      "sha256": "50bc39b6d911d7fca665bae496c54f92a18e9c96c548df3e5e35a9f763f0fd5f",
+      "size_bytes": 8449289603,
+      "scans": 596,
+      "sessions": 164
+    }
+  ],
+  "scans": 1367,
+  "sessions": 373,
+  "subjects": 150,
+  "header_variants": [
+    {
+      "dim_x": 256,
+      "dim_y": 256,
+      "dim_z": 128,
+      "voxel_x_mm": 1.0,
+      "voxel_y_mm": 1.0,
+      "voxel_z_mm": 1.25,
+      "dtype": ">f4"
+    }
+  ],
+  "linkage": {
+    "clinical_visits": 373,
+    "mri_sessions": 373,
+    "visits_with_scan": 373,
+    "sessions_without_visit": [],
+    "visits_without_scan": [],
+    "visit_pairs": 223,
+    "pairs_with_scan_at_t": 223,
+    "pairs_with_scans_at_both_visits": 223
+  },
+  "qc_flagged_sessions": [
+    "OAS2_0026_MR1",
+    "OAS2_0029_MR2",
+    "OAS2_0056_MR1",
+    "OAS2_0080_MR2",
+    "OAS2_0081_MR1",
+    "OAS2_0090_MR2",
+    "OAS2_0097_MR1",
+    "OAS2_0104_MR2",
+    "OAS2_0109_MR2",
+    "OAS2_0112_MR1",
+    "OAS2_0114_MR2",
+    "OAS2_0119_MR3",
+    "OAS2_0143_MR1",
+    "OAS2_0157_MR2",
+    "OAS2_0162_MR1",
+    "OAS2_0164_MR1",
+    "OAS2_0174_MR2",
+    "OAS2_0174_MR3",
+    "OAS2_0181_MR2"
+  ],
+  "parameters": {
+    "csf_box_fraction": 0.4,
+    "csf_intensity_ratio": 0.35,
+    "background_corner_voxels": 20,
+    "downsample_block": 4,
+    "qc_iqr_multiplier": 3.0
+  },
+  "output_sha256": {
+    "oasis2_mri_scans.csv": "166010f031518ec5be4b102683a8931c9bb98e9d435fec6fbde833c3f935872a",
+    "oasis2_mri_sessions.csv": "5f6082ffafe61e2c2ee75c83961f2dc4f148376d63c422adf8c416e815deabea"
+  }
+}
