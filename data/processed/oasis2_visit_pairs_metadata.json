@@ -1,0 +1,112 @@
+{
+  "created_utc": "2026-10-22T01:14:12+00:00",
+  "raw_file": "oasis_longitudinal.csv",
+  "raw_sha256": "d2f0a15ff35fa4a65c35c064b848fc1b396e9d2f4aec935c88d6e1588d31d40e",
+  "output_file": "oasis2_visit_pairs.csv",
+  "output_sha256": "8668b506a03b3181993eef69d9b9b564a4549f6f0084127c841d2c79c0ebf98c",
+  "random_state": 42,
+  "lineage": [
+    {
+      "step": "Load raw OASIS-2 CSV",
+      "rows": 373,
+      "patients": 150
+    },
+    {
+      "step": "Fill MMSE from previous visit; add change features",
+      "rows": 373,
+      "patients": 150
+    },
+    {
+      "step": "Pair each visit with the next; drop last visits",
+      "rows": 223,
+      "patients": 150
+    },
+    {
+      "step": "Attach MRI session measures of visit t (mri_id)",
+      "rows": 223,
+      "patients": 150
+    },
+    {
+      "step": "Split by patient; impute SES; encode; select columns",
+      "rows": 223,
+      "patients": 150
+    }
+  ],
+  "imputation": {
+    "ses_mode": 2.0,
+    "mmse_median": 29.0
+  },
+  "splits": {
+    "test": {
+      "patients": 31,
+      "visit_pairs": 45,
+      "declined": 6,
+      "decline_rate": 0.1333
+    },
+    "train": {
+      "patients": 119,
+      "visit_pairs": 178,
+      "declined": 25,
+      "decline_rate": 0.1404
+    }
+  },
+  "mri_sessions_file": "oasis2_mri_sessions.csv",
+  "mri_sessions_sha256": "5f6082ffafe61e2c2ee75c83961f2dc4f148376d63c422adf8c416e815deabea",
+  "feature_columns": [
+    "age",
+    "sex_male",
+    "educ",
+    "ses",
+    "ses_imputed",
+    "mmse",
+    "cdr",
+    "etiv",
+    "nwbv",
+    "asf",
+    "days_since_baseline",
+    "days_to_next",
+    "has_prev_visit",
+    "days_since_prev",
+    "mmse_change_prev",
+    "nwbv_change_prev",
+    "cdr_change_prev",
+    "mmse_rate_prev",
+    "nwbv_rate_prev",
+    "mri_csf_proxy"
+  ],
+  "metadata_features": [
+    "age",
+    "sex_male",
+    "educ",
+    "ses",
+    "ses_imputed",
+    "mmse",
+    "cdr",
+    "etiv",
+    "nwbv",
+    "asf",
+    "days_since_baseline",
+    "days_to_next",
+    "has_prev_visit",
+    "days_since_prev",
+    "mmse_change_prev",
+    "nwbv_change_prev",
+    "cdr_change_prev",
+    "mmse_rate_prev",
+    "nwbv_rate_prev"
+  ],
+  "mri_scan_features": [
+    "mri_csf_proxy"
+  ],
+  "mri_qc_columns": [
+    "mri_n_scans",
+    "mri_snr",
+    "mri_repeat_r",
+    "mri_qc_flag"
+  ],
+  "target_column": "declined",
+  "excluded_raw_columns": {
+    "Group": "target leakage",
+    "Hand": "constant"
+  }
+}
