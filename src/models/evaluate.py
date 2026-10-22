@@ -10,7 +10,7 @@ def evaluate_model(model, features):
   X, y = df[features], df[config.TARGET_COLUMN]
   #use patient grouped folds
   cv = PredefinedSplit(df["cv_fold"])
-  probs = cross_val_predict(model, X, y, cv=cv, method="Predict_proba")[:, 1]
+  probs = cross_val_predict(model, X, y, cv=cv, method="predict_proba")[:, 1]
   preds = (probs >= 0.5).astype(int)
 
   return {"roc_auc": roc_auc_score(y, probs),
