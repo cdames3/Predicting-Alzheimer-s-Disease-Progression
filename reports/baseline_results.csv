@@ -1,0 +1,13 @@
+feature_set,model,roc_auc,pr_auc,recall,precision,f1,accuracy
+metadata-only,dummy,0.496,0.14,0.0,0.0,0.0,0.86
+metadata-only,logistic_regression,0.578,0.18,0.4,0.152,0.22,0.601
+metadata-only,random_forest,0.559,0.225,0.28,0.149,0.194,0.674
+metadata-only,gradient_boosting,0.525,0.199,0.2,0.161,0.179,0.742
+mri-measures (tabular),dummy,0.496,0.14,0.0,0.0,0.0,0.86
+mri-measures (tabular),logistic_regression,0.603,0.176,0.64,0.182,0.283,0.545
+mri-measures (tabular),random_forest,0.62,0.228,0.56,0.25,0.346,0.702
+mri-measures (tabular),gradient_boosting,0.564,0.18,0.28,0.167,0.209,0.702
+combined,dummy,0.496,0.14,0.0,0.0,0.0,0.86
+combined,logistic_regression,0.562,0.181,0.32,0.119,0.174,0.573
+combined,random_forest,0.577,0.253,0.32,0.182,0.232,0.702
+combined,gradient_boosting,0.565,0.191,0.24,0.182,0.207,0.742
