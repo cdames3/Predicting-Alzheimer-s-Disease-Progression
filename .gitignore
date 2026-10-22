@@ -220,10 +220,15 @@ __marimo__/
 .streamlit/secrets.toml
 
 #prevents large OASIS files and secrets from being committed
-data/
+#(the small ML-ready tabular dataset in data/processed/ is versioned)
+data/*
+!data/processed/
 *.nii
 *.nii.gz
 *.img
 *.hdr
 wandb/
 .env
+
+# macOS folder metadata
+.DS_Store
