@@ -35,17 +35,33 @@ The project follows the **CRISP-DM** process, organized into Agile sprints:
 ├── CheckPoint_1/                  # Checkpoint 1 notebook (business and data understanding)
 ├── data/
 │   ├── raw/                       # OASIS-2 MRI archives (local only, not committed)
-│   ├── interim/                   # MRI slices for figures (local only, not committed)
+│   ├── interim/                   # MRI slices and 64^3 CNN volumes (local only, not committed)
 │   └── processed/                 # ML-ready dataset, MRI tables, metadata JSON (committed)
+├── docs/                          # Sphinx documentation (API reference from docstrings)
+├── models/                        # Trained CNN weights (cnn_mri.pt, cnn_multimodal.pt)
+├── notebooks/
+│   └── 02_baseline_models.ipynb   # Tabular baselines (Model 2) logged to W&B
 ├── reports/
-│   ├── eda_report.pdf             # Checkpoint 2 EDA with the dataset card attached
+│   ├── EDA_Report_MRIandCvs.pdf   # Checkpoint 2 EDA with the dataset card attached
 │   ├── dataset_card.md
+│   ├── model_card.md              # Baselines and CNN models
+│   ├── experiment_plan.md         # Validation, tuning, compute, and time estimates
+│   ├── governance_plan.md         # Monitoring metrics, cards, documentation style
+│   ├── *_results.csv              # Baseline, CNN, and tuning results
 │   └── figures/                   # Report figures, numbered by report page
 ├── src/
 │   ├── config.py                  # Paths, feature groups, constants
 │   ├── data/
 │   │   ├── make_mri_dataset.py    # Raw MRI archives -> per-scan / per-session tables
-│   │   └── make_dataset.py        # CSV + MRI sessions -> ML-ready visit pairs
+│   │   ├── make_dataset.py        # CSV + MRI sessions -> ML-ready visit pairs
+│   │   └── make_mri_volumes.py    # Raw MRI archives -> 64^3 normalized CNN inputs
+│   ├── models/
+│   │   ├── evaluate.py            # Shared patient-grouped CV evaluation (baselines)
+│   │   ├── cnn.py                 # 3D CNN (Model 1) with optional metadata branch (Model 3)
+│   │   ├── train_cnn.py           # Grouped-CV training, W&B logging, timing
+│   │   └── tune.py                # Optuna tuning of the tabular baselines
+│   ├── monitoring/
+│   │   └── drift.py               # Data quality, feature drift, model performance checks
 │   └── visualization/
 │       ├── eda_report.py          # Builds the EDA report (sections 1-5 + dataset card)
 │       ├── mri_eda.py             # Section 4: MRI scan pages
@@ -67,7 +83,12 @@ Data comes from [OASIS](https://www.oasis-brains.org/) (OASIS-2 longitudinal stu
 | `data/processed/oasis2_mri_scans.csv` | One row per raw MRI scan (1,367): header metadata, intensity, SNR, CSF proxy |
 | `data/processed/oasis2_mri_metadata.json` | Archive SHA-256 hashes, header variants, linkage to visits and pairs, QC list |
 | `reports/dataset_card.md` | Dataset card |
-| `reports/eda_report.pdf` | Full EDA on the ML-ready dataset (clinical + MRI), with the dataset card attached |
+| `reports/EDA_Report_MRIandCvs.pdf` | Full EDA on the ML-ready dataset (clinical + MRI), with the dataset card attached |
+| `reports/model_card.md` | Model card: baselines, tuned baselines, and CNN prototypes |
+| `reports/experiment_plan.md` | Validation plan, tuning plan, compute and time estimates, goals |
+| `reports/governance_plan.md` | Monitoring metrics and thresholds, cards, documentation style |
+| `reports/cnn_results.csv`, `reports/tuning_results.csv` | Grouped-CV results of the CNNs and the Optuna-tuned baselines |
+| `reports/monitoring_report.json` | Data quality, feature drift, and CNN performance checks |
 
 Feature lists for each model are defined in `src/config.py`: `METADATA_FEATURES` (metadata-only model), `MRI_SCAN_FEATURES`, and `FEATURE_COLUMNS` (all inputs). `cdr_next` defines the target and must never be used as a feature.
 
@@ -80,6 +101,17 @@ python -m src.data.make_mri_dataset      # MRI tables (needs the archives in dat
 python -m src.data.make_dataset          # ML-ready visit pairs (uses the committed MRI session table)
 python -m src.visualization.eda_report   # reports/eda_report.pdf and reports/figures/
 ```
+
+### Train, tune, and monitor
+```bash
+python -m src.data.make_mri_volumes                  # 64^3 CNN inputs (needs data/raw/; ~2 min)
+python -m src.models.train_cnn --model mri           # Model 1: MRI-only 3D CNN
+python -m src.models.train_cnn --model multimodal    # Model 3: CNN + metadata
+python -m src.models.tune --trials 30                # Optuna tuning of the tabular baselines
+python -m src.monitoring.drift                       # Data quality, drift, model checks
+sphinx-build -b html docs docs/_build/html           # API documentation
+```
+Runs are logged to Weights & Biases in offline mode by default. After `wandb login`, upload them with `wandb sync wandb/` or pass `--wandb online`.
 
 ## Tools
 - **Communication:** Slack
