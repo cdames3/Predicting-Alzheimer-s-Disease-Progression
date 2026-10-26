@@ -1,0 +1,7 @@
+feature_set,model,roc_auc,pr_auc,recall,precision,f1,accuracy,trials,seconds,seconds_per_trial,best_params,created_utc
+metadata-only,logistic_regression,0.578,0.18,0.4,0.152,0.22,0.601,30,2.7,0.09,"{'penalty': 'l2', 'C': 1.0462816792275733}",2026-10-26T00:54:13+00:00
+metadata-only,random_forest,0.616,0.278,0.4,0.222,0.286,0.719,30,39.3,1.31,"{'n_estimators': 300, 'max_depth': 5, 'min_samples_leaf': 1, 'max_features': 0.7352345408602358}",2026-10-26T00:54:13+00:00
+metadata-only,gradient_boosting,0.655,0.286,0.4,0.222,0.286,0.719,30,117.5,3.92,"{'learning_rate': 0.011137636314567354, 'max_iter': 250, 'max_depth': 4, 'min_samples_leaf': 5, 'l2_regularization': 0.020170143712815673}",2026-10-26T00:54:13+00:00
+combined,logistic_regression,0.568,0.204,0.32,0.119,0.174,0.573,30,2.1,0.07,"{'penalty': 'l2', 'C': 0.09108064139022445}",2026-10-26T00:54:13+00:00
+combined,random_forest,0.643,0.288,0.28,0.241,0.259,0.775,30,67.4,2.25,"{'n_estimators': 600, 'max_depth': 8, 'min_samples_leaf': 1, 'max_features': 0.7776006453301492}",2026-10-26T00:54:13+00:00
+combined,gradient_boosting,0.648,0.314,0.28,0.333,0.304,0.82,30,48.2,1.61,"{'learning_rate': 0.22787915138033604, 'max_iter': 100, 'max_depth': 2, 'min_samples_leaf': 5, 'l2_regularization': 0.0447080826450044}",2026-10-26T00:54:13+00:00
