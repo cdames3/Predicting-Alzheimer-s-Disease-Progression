@@ -26,6 +26,8 @@ MRI_SCANS_CSV = PROCESSED_DIR / "oasis2_mri_scans.csv"
 MRI_SESSIONS_CSV = PROCESSED_DIR / "oasis2_mri_sessions.csv"
 MRI_METADATA = PROCESSED_DIR / "oasis2_mri_metadata.json"
 MRI_SLICES = INTERIM_DIR / "oasis2_mri_slices.npz"
+# Downsampled first scan of each session, the input of the CNN models.
+MRI_VOLUMES = INTERIM_DIR / "oasis2_mri_volumes.npz"
 
 RANDOM_STATE = 42
 N_TEST_FOLDS = 5  # 1 of 5 patient groups held out -> ~20% test set
@@ -70,3 +72,20 @@ TARGET_COLUMN = "declined"
 TARGET_DERIVED_COLUMNS = ["cdr_next"]
 
 SPLIT_COLUMNS = ["split", "cv_fold"]
+
+# Metadata inputs used by the trained models (tuned baselines and the
+# multimodal CNN). ASF is left out because it is computed from eTIV
+# (r = -0.99), as in the baseline notebook.
+MODEL_METADATA_FEATURES = [c for c in METADATA_FEATURES if c != "asf"]
+
+# Experiment tracking (team Weights & Biases workspace).
+WANDB_ENTITY = "ds-capstone-group-5"
+WANDB_PROJECT = "predicting-alzheimers-progression"
+
+MODELS_DIR = PROJECT_ROOT / "models"
+CNN_RESULTS_CSV = REPORTS_DIR / "cnn_results.csv"
+CNN_TIMING_JSON = REPORTS_DIR / "cnn_timing.json"
+# Out-of-fold predictions of each CNN model ("mri" or "multimodal").
+CNN_OOF_TEMPLATE = "cnn_oof_predictions_{model}.csv"
+TUNING_RESULTS_CSV = REPORTS_DIR / "tuning_results.csv"
+MONITORING_REPORT = REPORTS_DIR / "monitoring_report.json"
