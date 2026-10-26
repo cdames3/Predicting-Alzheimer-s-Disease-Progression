@@ -120,7 +120,14 @@ An ML-ready longitudinal dataset for predicting **next-visit cognitive decline**
 4. **Link** every session to the clinical visits and visit pairs and verify coverage.
 5. **Keep** half-resolution central slices of the first scan per session (`data/interim/`, not versioned) for figures.
 
-The scans are not yet skull-stripped, registered, or intensity-normalized; these steps belong to the CNN preprocessing in the modeling sprint.
+### CNN inputs (`make_mri_volumes.py`)
+
+1. **Stream** both archives again and keep only the first MPRAGE scan of each session (repeats are not registered, so averaging them would blur the anatomy).
+2. **Downsample** by averaging blocks of 2 x 4 x 4 voxels: 128 x 256 x 256 to a cubic 64 x 64 x 64 grid (about 2.5 x 4 x 4 mm per voxel).
+3. **Normalize** intensities per volume: z-score over head voxels (above the Otsu threshold), clipped to +/-5 SD, stored as float16.
+4. **Output:** `data/interim/oasis2_mri_volumes.npz` (373 volumes, 135 MB; local only, not versioned). Built in about 2 minutes on an Apple M2.
+
+The volumes are still not skull-stripped or registered to a template. The CNN therefore sees skull and neck tissue and small head-position differences; random flips and shifts during training reduce the effect of position.
 
 ## Known Limitations and Biases
 
@@ -145,7 +152,8 @@ Rebuild in this order (outputs are deterministic for the same inputs):
 
 1. `python -m src.data.make_mri_dataset` (about 2 to 5 minutes; needs both archives in `data/raw/`)
 2. `python -m src.data.make_dataset`
-3. `python -m src.visualization.eda_report`
+3. `python -m src.data.make_mri_volumes` (CNN inputs; about 2 minutes)
+4. `python -m src.visualization.eda_report`
 
 Any change to the hashes, row counts, imputation values, or split statistics in the metadata JSON files requires a new dataset version.
 
