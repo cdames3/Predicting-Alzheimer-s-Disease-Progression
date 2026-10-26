@@ -1,0 +1,20 @@
+{
+  "mri": {
+    "device": "cpu",
+    "epochs_per_fold": 10,
+    "folds": 5,
+    "train_pairs": 178,
+    "parameters": 73097,
+    "mean_epoch_seconds": 7.495981911720155,
+    "total_cv_seconds": 377.79483899800107
+  },
+  "multimodal": {
+    "device": "cpu",
+    "epochs_per_fold": 10,
+    "folds": 5,
+    "train_pairs": 178,
+    "parameters": 73417,
+    "mean_epoch_seconds": 10.796642345740329,
+    "total_cv_seconds": 542.806935835004
+  }
+}
