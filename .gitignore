@@ -232,3 +232,4 @@ wandb/
 
 # macOS folder metadata
 .DS_Store
+models/*.pt
