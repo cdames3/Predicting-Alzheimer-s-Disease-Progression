@@ -1,0 +1,314 @@
+{
+  "created_utc": "2026-10-26T00:54:29+00:00",
+  "reference": {
+    "split": "train",
+    "rows": 178
+  },
+  "batch": {
+    "split": "test (features only)",
+    "rows": 45
+  },
+  "thresholds": {
+    "psi_warn": 0.1,
+    "psi_alert": 0.25,
+    "psi_null_quantile": 0.95,
+    "ks_alpha": 0.01,
+    "max_qc_fail_rate": 0.1,
+    "min_roc_auc": 0.6,
+    "max_subgroup_auc_gap": 0.1
+  },
+  "data_quality": {
+    "rows": 45,
+    "patients": 31,
+    "missing_columns": [],
+    "missing_values": {},
+    "out_of_range": {},
+    "mri_qc_fail_rate": 0.08888888888888889,
+    "status": "ok"
+  },
+  "feature_drift": [
+    {
+      "feature": "ses",
+      "psi": 0.3865,
+      "psi_null_p95": 0.272,
+      "ks_statistic": 0.1698,
+      "ks_pvalue": 0.2213,
+      "mean_shift_sd": 0.149,
+      "status": "alert"
+    },
+    {
+      "feature": "age",
+      "psi": 0.3331,
+      "psi_null_p95": 0.4342,
+      "ks_statistic": 0.1439,
+      "ks_pvalue": 0.3992,
+      "mean_shift_sd": 0.005,
+      "status": "ok"
+    },
+    {
+      "feature": "days_to_next",
+      "psi": 0.307,
+      "psi_null_p95": 0.4507,
+      "ks_statistic": 0.2634,
+      "ks_pvalue": 0.0106,
+      "mean_shift_sd": -0.337,
+      "status": "ok"
+    },
+    {
+      "feature": "nwbv",
+      "psi": 0.2989,
+      "psi_null_p95": 0.4552,
+      "ks_statistic": 0.1536,
+      "ks_pvalue": 0.3253,
+      "mean_shift_sd": -0.137,
+      "status": "ok"
+    },
+    {
+      "feature": "mri_csf_proxy",
+      "psi": 0.2979,
+      "psi_null_p95": 0.4089,
+      "ks_statistic": 0.1733,
+      "ks_pvalue": 0.2023,
+      "mean_shift_sd": 0.04,
+      "status": "ok"
+    },
+    {
+      "feature": "etiv",
+      "psi": 0.2902,
+      "psi_null_p95": 0.4456,
+      "ks_statistic": 0.1567,
+      "ks_pvalue": 0.3038,
+      "mean_shift_sd": 0.122,
+      "status": "ok"
+    },
+    {
+      "feature": "days_since_prev",
+      "psi": 0.2888,
+      "psi_null_p95": 0.1982,
+      "ks_statistic": 0.169,
+      "ks_pvalue": 0.2259,
+      "mean_shift_sd": -0.15,
+      "status": "alert"
+    },
+    {
+      "feature": "ses_imputed",
+      "psi": 0.2875,
+      "psi_null_p95": 0.1168,
+      "ks_statistic": 0.1331,
+      "ks_pvalue": 0.4957,
+      "mean_shift_sd": 0.898,
+      "status": "alert"
+    },
+    {
+      "feature": "asf",
+      "psi": 0.2681,
+      "psi_null_p95": 0.4204,
+      "ks_statistic": 0.1567,
+      "ks_pvalue": 0.3038,
+      "mean_shift_sd": -0.09,
+      "status": "ok"
+    },
+    {
+      "feature": "days_since_baseline",
+      "psi": 0.2647,
+      "psi_null_p95": 0.2256,
+      "ks_statistic": 0.1749,
+      "ks_pvalue": 0.1943,
+      "mean_shift_sd": -0.093,
+      "status": "alert"
+    },
+    {
+      "feature": "sex_male",
+      "psi": 0.1283,
+      "psi_null_p95": 0.1143,
+      "ks_statistic": 0.1733,
+      "ks_pvalue": 0.2023,
+      "mean_shift_sd": 0.353,
+      "status": "warn"
+    },
+    {
+      "feature": "mmse",
+      "psi": 0.1124,
+      "psi_null_p95": 0.2763,
+      "ks_statistic": 0.1459,
+      "ks_pvalue": 0.3867,
+      "mean_shift_sd": -0.178,
+      "status": "ok"
+    },
+    {
+      "feature": "cdr",
+      "psi": 0.0603,
+      "psi_null_p95": 0.1766,
+      "ks_statistic": 0.1069,
+      "ks_pvalue": 0.7621,
+      "mean_shift_sd": 0.207,
+      "status": "ok"
+    },
+    {
+      "feature": "nwbv_rate_prev",
+      "psi": 0.0373,
+      "psi_null_p95": 0.2017,
+      "ks_statistic": 0.064,
+      "ks_pvalue": 0.9957,
+      "mean_shift_sd": 0.017,
+      "status": "ok"
+    },
+    {
+      "feature": "cdr_change_prev",
+      "psi": 0.0185,
+      "psi_null_p95": 0.1487,
+      "ks_statistic": 0.0112,
+      "ks_pvalue": 1.0,
+      "mean_shift_sd": 0.104,
+      "status": "ok"
+    },
+    {
+      "feature": "educ",
+      "psi": 0.0178,
+      "psi_null_p95": 0.3175,
+      "ks_statistic": 0.088,
+      "ks_pvalue": 0.9141,
+      "mean_shift_sd": 0.001,
+      "status": "ok"
+    },
+    {
+      "feature": "nwbv_change_prev",
+      "psi": 0.0132,
+      "psi_null_p95": 0.203,
+      "ks_statistic": 0.0801,
+      "ks_pvalue": 0.9577,
+      "mean_shift_sd": 0.107,
+      "status": "ok"
+    },
+    {
+      "feature": "has_prev_visit",
+      "psi": 0.0122,
+      "psi_null_p95": 0.0887,
+      "ks_statistic": 0.0203,
+      "ks_pvalue": 1.0,
+      "mean_shift_sd": -0.043,
+      "status": "ok"
+    },
+    {
+      "feature": "mmse_change_prev",
+      "psi": 0.0003,
+      "psi_null_p95": 0.3777,
+      "ks_statistic": 0.0288,
+      "ks_pvalue": 1.0,
+      "mean_shift_sd": 0.022,
+      "status": "ok"
+    },
+    {
+      "feature": "mmse_rate_prev",
+      "psi": 0.0003,
+      "psi_null_p95": 0.119,
+      "ks_statistic": 0.0288,
+      "ks_pvalue": 1.0,
+      "mean_shift_sd": 0.026,
+      "status": "ok"
+    }
+  ],
+  "drift_summary": {
+    "ok": 15,
+    "alert": 4,
+    "warn": 1
+  },
+  "model_performance": {
+    "cnn_mri (out-of-fold, train)": {
+      "roc_auc": 0.5270588235294117,
+      "pr_auc": 0.18747407163817567,
+      "recall": 0.52,
+      "brier": 0.2745442588563812,
+      "predicted_positive_rate": 0.550561797752809,
+      "observed_positive_rate": 0.1404494382022472,
+      "calibration": [
+        {
+          "mean_predicted": 0.217,
+          "observed_rate": 0.167,
+          "n": 36
+        },
+        {
+          "mean_predicted": 0.415,
+          "observed_rate": 0.083,
+          "n": 36
+        },
+        {
+          "mean_predicted": 0.516,
+          "observed_rate": 0.111,
+          "n": 36
+        },
+        {
+          "mean_predicted": 0.608,
+          "observed_rate": 0.114,
+          "n": 35
+        },
+        {
+          "mean_predicted": 0.716,
+          "observed_rate": 0.229,
+          "n": 35
+        }
+      ],
+      "subgroups": {
+        "sex": {
+          "female": 0.617,
+          "male": 0.416
+        },
+        "age_band": {
+          "<70": 0.594,
+          "70-79": 0.444,
+          "80+": 0.625
+        }
+      },
+      "max_subgroup_auc_gap": 0.201,
+      "status": "alert"
+    },
+    "cnn_multimodal (out-of-fold, train)": {
+      "roc_auc": 0.5168627450980392,
+      "pr_auc": 0.20273484936508093,
+      "recall": 0.48,
+      "brier": 0.27428074546272374,
+      "predicted_positive_rate": 0.4550561797752809,
+      "observed_positive_rate": 0.1404494382022472,
+      "calibration": [
+        {
+          "mean_predicted": 0.211,
+          "observed_rate": 0.194,
+          "n": 36
+        },
+        {
+          "mean_predicted": 0.383,
+          "observed_rate": 0.083,
+          "n": 36
+        },
+        {
+          "mean_predicted": 0.486,
+          "observed_rate": 0.111,
+          "n": 36
+        },
+        {
+          "mean_predicted": 0.607,
+          "observed_rate": 0.114,
+          "n": 35
+        },
+        {
+          "mean_predicted": 0.752,
+          "observed_rate": 0.2,
+          "n": 35
+        }
+      ],
+      "subgroups": {
+        "sex": {
+          "female": 0.592,
+          "male": 0.429
+        },
+        "age_band": {
+          "<70": 0.566,
+          "70-79": 0.4,
+          "80+": 0.644
+        }
+      },
+      "max_subgroup_auc_gap": 0.244,
+      "status": "alert"
+    }
+  }
+}
