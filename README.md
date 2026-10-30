@@ -30,6 +30,13 @@ The project follows the **CRISP-DM** process, organized into Agile sprints:
 - Modeling & Evaluation
 - Deployment / Reporting
 
+### Run the demo
+```bash
+pip install -r requirements.txt
+streamlit run app/demo.py
+```
+Opens at `localhost:8501`. Enter a patient's visit information to see the predicted risk that their CDR increases by the next visit (tuned gradient boosting, metadata-only). Research demo only; not for clinical use.
+
 ## Repository Structure
 ```
 ├── CheckPoint_1/                  # Checkpoint 1 notebook (business and data understanding)
