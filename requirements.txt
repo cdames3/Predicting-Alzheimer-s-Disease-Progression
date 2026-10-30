@@ -9,3 +9,4 @@ torch>=2.4
 optuna>=4.0
 wandb>=0.18
 sphinx>=8.0
+streamlit>=1.40
