@@ -5,8 +5,8 @@
     "folds": 5,
     "train_pairs": 178,
     "parameters": 73097,
-    "mean_epoch_seconds": 7.495981911720155,
-    "total_cv_seconds": 377.79483899800107
+    "mean_epoch_seconds": 6.532768085760181,
+    "total_cv_seconds": 328.08869062499434
   },
   "multimodal": {
     "device": "cpu",
@@ -14,7 +14,7 @@
     "folds": 5,
     "train_pairs": 178,
     "parameters": 73417,
-    "mean_epoch_seconds": 10.796642345740329,
-    "total_cv_seconds": 542.806935835004
+    "mean_epoch_seconds": 7.694283331719344,
+    "total_cv_seconds": 385.58454879200144
   }
 }

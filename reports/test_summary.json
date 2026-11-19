@@ -1,0 +1,14 @@
+{
+  "created_utc": "2026-11-17T05:11:28+00:00",
+  "test_pairs": 45,
+  "test_patients": 31,
+  "test_declines": 6,
+  "bootstrap_resamples": 1000,
+  "cnn_seeds": [
+    42,
+    43,
+    44
+  ],
+  "threshold_rule": "Youden's J on training out-of-fold predictions",
+  "selected_model": "gradient_boosting | metadata-only (tuned)"
+}

@@ -1,3 +1,5 @@
 feature_set,model,roc_auc,pr_auc,recall,precision,f1,accuracy,epochs,lr,batch_size,seconds,created_utc
 mri-volume + metadata (CNN),cnn_3d,0.517,0.203,0.48,0.148,0.226,0.539,10,0.001,8,542.8,2026-10-26T00:39:54+00:00
 mri-volume (CNN),cnn_3d,0.527,0.187,0.52,0.133,0.211,0.455,10,0.001,8,377.8,2026-10-26T00:49:30+00:00
+mri-volume (CNN),cnn_3d,0.52,0.166,0.6,0.149,0.238,0.461,10,0.001,8,328.1,2026-11-17T04:53:18+00:00
+mri-volume + metadata (CNN),cnn_3d,0.522,0.184,0.56,0.151,0.237,0.494,10,0.001,8,385.6,2026-11-17T04:59:44+00:00

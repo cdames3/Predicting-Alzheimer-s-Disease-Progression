@@ -1,5 +1,5 @@
 {
-  "created_utc": "2026-10-26T00:54:29+00:00",
+  "created_utc": "2026-11-17T05:03:36+00:00",
   "reference": {
     "split": "train",
     "rows": 178
@@ -215,99 +215,99 @@
   },
   "model_performance": {
     "cnn_mri (out-of-fold, train)": {
-      "roc_auc": 0.5270588235294117,
-      "pr_auc": 0.18747407163817567,
-      "recall": 0.52,
-      "brier": 0.2745442588563812,
-      "predicted_positive_rate": 0.550561797752809,
+      "roc_auc": 0.52,
+      "pr_auc": 0.16618782261916124,
+      "recall": 0.6,
+      "brier": 0.3037517155669601,
+      "predicted_positive_rate": 0.5674157303370787,
       "observed_positive_rate": 0.1404494382022472,
       "calibration": [
         {
-          "mean_predicted": 0.217,
-          "observed_rate": 0.167,
+          "mean_predicted": 0.143,
+          "observed_rate": 0.139,
           "n": 36
         },
         {
-          "mean_predicted": 0.415,
-          "observed_rate": 0.083,
+          "mean_predicted": 0.412,
+          "observed_rate": 0.139,
           "n": 36
         },
         {
-          "mean_predicted": 0.516,
+          "mean_predicted": 0.542,
           "observed_rate": 0.111,
           "n": 36
         },
         {
-          "mean_predicted": 0.608,
-          "observed_rate": 0.114,
+          "mean_predicted": 0.665,
+          "observed_rate": 0.143,
           "n": 35
         },
         {
-          "mean_predicted": 0.716,
-          "observed_rate": 0.229,
+          "mean_predicted": 0.782,
+          "observed_rate": 0.171,
           "n": 35
         }
       ],
       "subgroups": {
         "sex": {
-          "female": 0.617,
-          "male": 0.416
+          "female": 0.599,
+          "male": 0.425
         },
         "age_band": {
-          "<70": 0.594,
-          "70-79": 0.444,
-          "80+": 0.625
+          "<70": 0.554,
+          "70-79": 0.458,
+          "80+": 0.582
         }
       },
-      "max_subgroup_auc_gap": 0.201,
+      "max_subgroup_auc_gap": 0.174,
       "status": "alert"
     },
     "cnn_multimodal (out-of-fold, train)": {
-      "roc_auc": 0.5168627450980392,
-      "pr_auc": 0.20273484936508093,
-      "recall": 0.48,
-      "brier": 0.27428074546272374,
-      "predicted_positive_rate": 0.4550561797752809,
+      "roc_auc": 0.5220915032679738,
+      "pr_auc": 0.1839089903796916,
+      "recall": 0.56,
+      "brier": 0.28786126733082534,
+      "predicted_positive_rate": 0.5224719101123596,
       "observed_positive_rate": 0.1404494382022472,
       "calibration": [
         {
-          "mean_predicted": 0.211,
-          "observed_rate": 0.194,
+          "mean_predicted": 0.258,
+          "observed_rate": 0.139,
           "n": 36
         },
         {
-          "mean_predicted": 0.383,
-          "observed_rate": 0.083,
+          "mean_predicted": 0.414,
+          "observed_rate": 0.139,
           "n": 36
         },
         {
-          "mean_predicted": 0.486,
-          "observed_rate": 0.111,
+          "mean_predicted": 0.52,
+          "observed_rate": 0.139,
           "n": 36
         },
         {
-          "mean_predicted": 0.607,
-          "observed_rate": 0.114,
+          "mean_predicted": 0.623,
+          "observed_rate": 0.086,
           "n": 35
         },
         {
-          "mean_predicted": 0.752,
+          "mean_predicted": 0.753,
           "observed_rate": 0.2,
           "n": 35
         }
       ],
       "subgroups": {
         "sex": {
-          "female": 0.592,
-          "male": 0.429
+          "female": 0.594,
+          "male": 0.431
         },
         "age_band": {
-          "<70": 0.566,
-          "70-79": 0.4,
-          "80+": 0.644
+          "<70": 0.571,
+          "70-79": 0.448,
+          "80+": 0.59
         }
       },
-      "max_subgroup_auc_gap": 0.244,
+      "max_subgroup_auc_gap": 0.16299999999999998,
       "status": "alert"
     }
   }

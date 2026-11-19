@@ -1,0 +1,10 @@
+model,family,selected,cv_roc_auc,test_roc_auc,roc_auc_ci_low,roc_auc_ci_high,test_pr_auc,pr_auc_ci_low,pr_auc_ci_high,test_brier,recall@0.5,precision@0.5,f1@0.5,accuracy@0.5,flagged@0.5,youden_threshold,recall@youden,precision@youden,f1@youden,accuracy@youden,flagged@youden,seed_roc_auc_min,seed_roc_auc_max
+logistic_regression | combined (tuned),tabular,False,0.5681,0.8162,0.597,0.9652,0.3996,0.1655,0.8445,0.226,0.8333,0.25,0.3846,0.6444,20,0.3804,1.0,0.1935,0.3243,0.4444,31,,
+random_forest | metadata-only (tuned),tabular,False,0.6157,0.7949,0.5755,0.9529,0.3792,0.1327,0.7843,0.1739,0.6667,0.3333,0.4444,0.7778,12,0.6178,0.5,0.5,0.5,0.8667,6,,
+logistic_regression | metadata-only (tuned),tabular,False,0.578,0.7906,0.624,0.9365,0.3037,0.1287,0.7129,0.2293,0.8333,0.2778,0.4167,0.6889,18,0.394,1.0,0.2222,0.3636,0.5333,27,,
+gradient_boosting | metadata-only (tuned),tabular,True,0.6546,0.7692,0.5813,0.9215,0.3643,0.1114,0.7605,0.1672,0.3333,0.1667,0.2222,0.6889,12,0.1766,1.0,0.1818,0.3077,0.4,33,,
+gradient_boosting | combined (tuned),tabular,False,0.6484,0.7265,0.5,0.8977,0.2887,0.0946,0.6327,0.1709,0.3333,0.2,0.25,0.7333,10,0.0167,0.8333,0.1852,0.303,0.4889,27,,
+3D CNN + metadata | MRI volume + metadata,cnn,False,0.5221,0.6923,0.4298,0.9011,0.2644,0.0879,0.6454,0.2442,0.8333,0.1852,0.303,0.4889,27,0.6477,0.1667,0.25,0.2,0.8222,4,0.641,0.7436
+random_forest | combined (tuned),tabular,False,0.6434,0.6667,0.404,0.9126,0.2821,0.0831,0.6676,0.1701,0.5,0.2727,0.3529,0.7556,11,0.2648,0.6667,0.1905,0.2963,0.5778,21,,
+dummy (always prior),tabular,False,0.4961,0.5,0.5,0.5,0.1333,0.0424,0.2457,0.1156,0.0,0.0,0.0,0.8667,0,0.1399,1.0,0.1333,0.2353,0.1333,45,,
+3D CNN | MRI volume,cnn,False,0.52,0.4957,0.2243,0.7517,0.1486,0.0569,0.3881,0.2421,0.3333,0.1111,0.1667,0.5556,18,0.7688,0.0,0.0,0.0,0.8667,0,0.4829,0.5128
